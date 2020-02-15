@@ -41,11 +41,12 @@ console.log({nuevoArreglo2, juegos})
 // borrar un pocicion exacta
 let pocisionBorrada = 1;
 console.log(juegos)
+// let nuevoArreglo3 = juegos.splice(pocisionBorrada,cuantos elemetos)
 let nuevoArreglo3 = juegos.splice(pocisionBorrada,2)
 console.log({nuevoArreglo3, juegos})
 
 
-// saber la pocicion se encuentra un objeto
+// saber la pocicion se encuentra un objeto, saber la pocicion indice
 // si indexOf regresa -1 quiere decir q no lo encontro
 let nuevoArreglo4 = juegos.indexOf('Blody Roar')
 console.log({nuevoArreglo4, juegos})
