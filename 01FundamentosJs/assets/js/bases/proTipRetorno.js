@@ -62,7 +62,7 @@ console.log({nuevoApellido})
 
 
 
-// desestructuracion de argumentos
+// desestructuracion de objetos argumentos
 const tony = {
     nombre: 'Tony Stark',
     codName: 'IronMan',
@@ -86,7 +86,7 @@ const imprimePropiedades = ({nombre, codName, vivo, edad=15, traje})=>{
  console.table({nombre, codName, vivo ,edad, traje})
 }
 
-imprimePropiedades(tony)
+imprimePropiedades(tony);
 
 
 
