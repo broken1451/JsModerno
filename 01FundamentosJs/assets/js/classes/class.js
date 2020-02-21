@@ -4,6 +4,7 @@ class Persona {
     nombre = '';
     codigo = '';
     frase  = '';
+    comida = '';
 
     // constructor(nombre='dsdsd', codigo='151', frase='dadasas') {
     constructor(nombre, codigo, frase) {
