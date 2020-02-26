@@ -16,7 +16,7 @@ class Persona {
     }
 
 
-    getInfo(){
+    getInfo(){  
         console.log(`info: ${this.nombre}, ${this.apellido}, ${this.pais}`)
     }
 
