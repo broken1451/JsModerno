@@ -1,0 +1,11 @@
+{
+  "name": "03-webpackinicial",
+  "version": "1.0.0",
+  "description": "Este un cascaron de un proyecto de webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adrian",
+  "license": "ISC"
+}
