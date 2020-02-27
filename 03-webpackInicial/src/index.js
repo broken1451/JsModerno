@@ -5,5 +5,5 @@ const nombre = 'Adrian'
 saludar(nombre);
 
 // instalacion de webpack npm install webpack webpack-cli --save-dev
-// nom run build,ejecuta webpack pordefecto
+// nom run build,ejecuta webpack pordefecto y crea el main.js automatico
 
