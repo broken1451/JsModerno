@@ -1,7 +1,9 @@
 
 // npm i -D html-loader html-webpack-plugin esto me permite  mover el archivo html la dist y decirle a webpack q meta automaticamente el bundle en el index 
-
-
+// npm i -D webpack-dev-server servidor de desarrollo de webpack  para el live reload
+// webpack-dev-server estara pendiente de los cambios con este comando  "start": "webpack-dev-server --open", en el packge.json
+// package.json 
+// "start": "webpack-dev-server --open --port=8080", por defecto
 
 // configuracion de webpack
 const htmlWebpackPlugin = require('html-webpack-plugin')
