@@ -57,6 +57,11 @@ configuracion en el .babel
 
 */
 
+/*
+recuperar el ultimo cambio subido git checkout -- .
+
+*/
+
 
 
 // configuracion de webpack
