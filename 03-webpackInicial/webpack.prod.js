@@ -14,6 +14,8 @@
 
 // npm i -D file-loader
 
+// para limpiar la carpeta dist automaticamente al hacer el build npm install --save-dev clean-webpack-plugin
+
 /*
 packge.json
 "build": "webpack", archivo por defecto
@@ -62,6 +64,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin')
 const miniCssExtractPlugin = require('mini-css-extract-plugin')
 const optimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const MinifyPlugin = require("babel-minify-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
 
@@ -145,7 +148,8 @@ module.exports = {
             filename: '[name].[contentHash].css',
             ignoreOrder: false // esto es para q no salgan los warning 
          }),
-         new MinifyPlugin()
+         new MinifyPlugin(),
+         new CleanWebpackPlugin()
      ]
 
 
