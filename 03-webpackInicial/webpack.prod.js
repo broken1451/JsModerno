@@ -14,20 +14,70 @@
 
 // npm i -D file-loader
 
+/*
+packge.json
+"build": "webpack", archivo por defecto
+"build": "webpack --config webpack.prod.js",
+ "build:dev": "webpack --config webpack.config.js",
+"build": "webpack --config.prod.js",
+
+*/
+
+
+/*
+Instalacion de babel js
+npm install --save-dev babel-loader @babel/core
+babel trabaja solo js asi q afectara solo a archivis js
+
+se crea un archivo para su configuracion .babelrc
+
+npm install babel-preset-minify --save-dev para minificar el archivojs 
+se pone esta configuracio en el archivo .babelrc
+{
+  "presets": ["minify"]
+}
+
+se instala para q babel minificar todo el codigo js compatibles 
+npm install babel-minify-webpack-plugin --save-dev
+
+se instala para usar el standar js de todo los navegadores
+npm install --save-dev @babel/preset-env
+configuracion en el .babel 
+{
+  "presets": ["@babel/preset-env"]
+}
+
+.babel
+{
+    "presets": ["@babel/preset-env","minify"]
+}
+
+
+*/
+
+
+
 // configuracion de webpack
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const miniCssExtractPlugin = require('mini-css-extract-plugin')
 const optimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 
 module.exports = {
 
    //  mode: 'production', // lo minifica
-    mode: 'development',
+    mode: 'production',
     // para minificar el archivo global con el plugin optimizeCssAssetsWebpackPlugin
     optimization:{
       minimizer:[
         new optimizeCssAssetsWebpackPlugin()
       ]
+    },
+    output:{
+      //  crear el archivo semimanual
+      // filename:'nombre q quiera, main.abc.js'
+      // filename:'main.[hash, contentHash].js'
+      filename:'main.[contentHash].js'
     },
     //configuracion del webpack
      module:{
@@ -72,6 +122,14 @@ module.exports = {
                   name:'assets/img/[name].[ext]'
                }
              }]  
+           },
+           {
+             // configuracion de babel js
+             test: /\.js$/,
+             exclude: /node_modules/, 
+              use:[
+                'babel-loader'
+              ]
            } 
         ]
      },
@@ -84,15 +142,11 @@ module.exports = {
          }),
          new miniCssExtractPlugin({
             // filename: '[nombre de desee poner al archivo].[contentHash, nombre especial para prevenir el cache].css'
-            filename: '[name].css',
+            filename: '[name].[contentHash].css',
             ignoreOrder: false // esto es para q no salgan los warning 
-         })
+         }),
+         new MinifyPlugin()
      ]
-
-
-
-
-
 
 
 

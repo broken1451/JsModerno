@@ -1,4 +1,5 @@
 import {saludar} from './js/componentes'
+import './styles.css'
 
 const nombre = 'Adrian'
 
@@ -9,3 +10,4 @@ saludar(nombre);
 // package.json  "build": "webpack",
 
 // npm i -D html-loader html-webpack-plugin esto me permite  mover el archivo html la dist y decirle a webpack q meta automaticamente el bundle en el index 
+ 
