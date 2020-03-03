@@ -4,8 +4,9 @@ import { crearTodoHtml } from './js/componentes';
 
 
 const tarea = new TODO('aprender js')
-const todoList = new TodoList()
+export const todoList = new TodoList()
 todoList.nuevaTarea(tarea)
+
 
 
 
