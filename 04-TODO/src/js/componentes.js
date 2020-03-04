@@ -40,3 +40,24 @@ const txtInput = document.querySelector('.new-todo')
 
 
 
+ divUlTodoList.addEventListener('click', (event)=>{
+    console.log(event);
+    console.log(event.target);// indica a que se le hizo click
+    console.log(event.target.localName);// saber q elemento fue exactamente
+    console.log(event.target.parentElement);// obtener el elemento  refrencia
+    console.log(event.target.parentElement.parentElement);// obtener refrencia el elemento 
+    
+    const nombreElemento = event.target.localName;// inpu, label, button- saber q elemento fue exactamente
+    const todoElemento = event.target.parentElement.parentElement;// obtener el elemento 
+    const todoId = todoElemento.getAttribute('data-id');// para obtener el atributo q nos interesa
+    console.log('todoElemento ', todoElemento);
+    console.log(todoId);
+
+     if (nombreElemento.includes('input')) { // hizo click en el input, si este elemento incluye algo llamado input 
+        todoList.marcarCompletado(todoId);
+        todoElemento.classList.toggle('completed'); // anadir o quitar una clase,
+     }
+
+     console.log(todoList);
+
+ })
