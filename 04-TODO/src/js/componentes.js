@@ -3,7 +3,8 @@ import {todoList} from '../index'
 
 // Referencias en el html
 const divUlTodoList = document.querySelector('.todo-list');
-const txtInput = document.querySelector('.new-todo')
+const txtInput = document.querySelector('.new-todo');
+const botonBorrar = document.querySelector('.clear-completed');
 
  export const crearTodoHtml = (todo)=> {
 
@@ -56,8 +57,31 @@ const txtInput = document.querySelector('.new-todo')
      if (nombreElemento.includes('input')) { // hizo click en el input, si este elemento incluye algo llamado input 
         todoList.marcarCompletado(todoId);
         todoElemento.classList.toggle('completed'); // anadir o quitar una clase,
+     } else if (nombreElemento.includes('button')) { // borrar el elemento
+        todoList.eliminarTodo(todoId);
+        divUlTodoList.removeChild(todoElemento);
      }
 
      console.log(todoList);
-
+         
  })
+
+ botonBorrar.addEventListener('click', ()=> {
+   todoList.eliminarCompletados();
+
+
+   for (let i = divUlTodoList.children.length-1; i>=0; i--){
+
+      const element = divUlTodoList.children[i];
+      console.log(element);
+
+      
+      if (element.classList.contains('completed')) {
+         divUlTodoList.removeChild(element);
+      }
+
+   }
+
+
+
+ });
