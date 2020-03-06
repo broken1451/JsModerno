@@ -69,11 +69,11 @@ const botonBorrar = document.querySelector('.clear-completed');
  botonBorrar.addEventListener('click', ()=> {
    todoList.eliminarCompletados();
 
-
    for (let i = divUlTodoList.children.length-1; i>=0; i--){
 
       const element = divUlTodoList.children[i];
-      console.log(element);
+      console.log('element for inverso ', element);
+      console.log(todoList);
 
       
       if (element.classList.contains('completed')) {
