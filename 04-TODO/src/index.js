@@ -10,13 +10,20 @@ export const todoList = new TodoList()
 
 
 console.log(todoList);
-console.log(todoList.todos);
+console.log('todoList.todos: ',todoList.todos);
 todoList.todos.forEach(todo => {
-    console.log([todo]);
+    console.log('todo: ', todo);
     crearTodoHtml(todo);
 });
 
-// otra amnera 
+todoList.todos[0].imprimirClase()
+// todoList.todos.imprimirClase()
+
+// const tarea = new TODO('aprender js')
+// todoList.nuevaTarea(tarea)
+// tarea.imprimirClase()
+
+// otra amnera imprimirClase
 // todoList.todos.forEach(crearTodoHtml);
 
 // for (const todo of todoList.todos) {
@@ -35,3 +42,4 @@ todoList.todos.forEach(todo => {
 // setTimeout(() => {
 //     localStorage.removeItem('key');
 // }, 1500);   
+// los metodos no son almacenados en local storage solo se guardan las propiedades
