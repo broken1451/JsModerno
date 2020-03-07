@@ -5,6 +5,8 @@ import {todoList} from '../index'
 const divUlTodoList = document.querySelector('.todo-list');
 const txtInput = document.querySelector('.new-todo');
 const botonBorrar = document.querySelector('.clear-completed');
+const ulFiltros = document.querySelector('.filters');
+const arconFiltros = document.querySelectorAll('.filtro');
 
  export const crearTodoHtml = (todo)=> {
 
@@ -82,6 +84,54 @@ const botonBorrar = document.querySelector('.clear-completed');
 
    }
 
+
+
+ });
+
+ ulFiltros.addEventListener('click', (event) => {
+   console.log(event)
+   console.log(event.target.text) // saber q es 
+
+   const filtro = event.target.text;
+
+   if (!filtro) {
+      return
+   }
+
+   console.log('arconFiltros: ', arconFiltros);
+   arconFiltros.forEach((element)=>{
+      console.log('element: ', element);
+      element.classList.remove('selected');
+   });
+   console.log('event.target: ', event.target);
+   const linksArcontac = event.target; 
+   linksArcontac.classList.add('selected')
+
+   console.warn(divUlTodoList.children)
+   for (const element of divUlTodoList.children) {
+      console.log(element);
+      console.log('element.classList: ', element.classList);
+
+      element.classList.remove('hidden');
+      const completado =  element.classList.contains('completed');
+
+      switch (filtro) {
+         case 'Pendientes':
+            if (completado) {
+               element.classList.add('hidden')
+            }
+         break;
+         case 'Completados':
+            if (!completado) {
+               element.classList.add('hidden')
+            }
+         break;
+      
+         default:
+         break;
+      }
+      console.log('completado', completado);
+   }
 
 
  });
