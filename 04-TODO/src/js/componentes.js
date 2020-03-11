@@ -122,11 +122,10 @@ const arconFiltros = document.querySelectorAll('.filtro');
             }
          break;
          case 'Completados':
-            if (!completado) {
+            if (!completado) {   
                element.classList.add('hidden')
             }
          break;
-      
          default:
          break;
       }
