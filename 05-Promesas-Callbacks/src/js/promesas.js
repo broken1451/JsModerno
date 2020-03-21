@@ -43,7 +43,7 @@ export const buscarHeroe = (id) =>{
 
         if (heroe) {
             // callback(error siempre si viene correcto el error es un null,heroe);        
-            setTimeout(() => {
+            setTimeout(() => {   
                 resolve(heroe)   
             }, 1000);   
         } else {
